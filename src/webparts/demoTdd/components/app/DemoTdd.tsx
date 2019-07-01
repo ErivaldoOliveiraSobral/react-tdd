@@ -18,13 +18,14 @@ export default class DemoTdd extends React.Component<IDemoTddProps, IDemoTddStat
   }
   private changeCounter(delta: number): void {
     if (delta < 0 && this.state.counter != 0)
-        this.setState({ counter: this.state.counter + delta })
+      this.setState({ counter: this.state.counter + delta })
     else if (delta > 0 && this.state.counter >= 0)
-        this.setState({ counter: this.state.counter + delta });
+      this.setState({ counter: this.state.counter + delta });
   };
   public render(): React.ReactElement<IDemoTddProps> {
     return (
       <div className={styles.demoTdd} data-test="component-demo-tdd">
+        {/* <Display data-test="display-contagem" counter={this.state.counter} /> */}
         <h1 data-test="display-contagem">Contagem: {this.state.counter}</h1>
         <button
           data-test="button-incremento"

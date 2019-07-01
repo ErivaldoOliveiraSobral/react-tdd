@@ -1,8 +1,9 @@
 import * as React from "react";
 
-const Display = ({ counter }): JSX.Element => {
+const Display = (props: any): JSX.Element => {
+    const { counter } = props;
     return (
-        <div>Contagem: {counter}</div>
+        <h1 data-test="display-contagem">Contagem: {counter ? counter : 0}</h1>
     );
 };
 

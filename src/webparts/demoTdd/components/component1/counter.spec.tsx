@@ -1,5 +1,4 @@
 import * as React from 'react';
-import "jest";
 import { shallow } from "enzyme";
 import Display from "./counter";
 
@@ -12,6 +11,9 @@ describe("Teste display", () => {
 
     });
     it("Display renderiando?", () => {
-        const wrapper = setup({});
+        const props = 0; 
+        const wrapper = setup({ props });
+        const display = wrapper.find("[data-test='display-contagem']");
+        expect(display.text()).toBe("Contagem: 0");
     });
 });
