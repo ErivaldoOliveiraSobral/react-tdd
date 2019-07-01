@@ -117,4 +117,16 @@ describe("Test Driven Development", function () {
         displayWrapper.find('[data-test="display-contagem"]')
         expect(displayWrapper.text()).toBe("Contagem: 0");
     });
+    it('Mensagem de Erro se valor for negativo', () => {
+        const counter = 0;
+        const wrapper = setup(props, { counter });
+        let button: ShallowWrapper;
+        let errorLabel: ShallowWrapper;
+
+        button = findByTestAttr(wrapper, 'button-decremento');
+        button.simulate('click');
+
+        errorLabel = findByTestAttr(wrapper, 'error-message');
+        expect(errorLabel.text()).toBe("Valor não pode ser negativo");
+    });
 });
