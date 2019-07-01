@@ -1,3 +1,4 @@
 export interface IDemoTddState {
-    counter: number;
+    counter?: number;
+    error?: boolean;
 }
