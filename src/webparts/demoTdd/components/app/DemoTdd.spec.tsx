@@ -124,16 +124,9 @@ describe("Test Driven Development", function () {
         let errorLabel: ShallowWrapper;
 
         button = findByTestAttr(wrapper, 'button-decremento');
-        // button.simulate('click');
-        
+        button.simulate('click');
+
         errorLabel = findByTestAttr(wrapper, 'error-message');
         expect(errorLabel.text()).toBe("Valor não pode ser negativo");
-    });
-    it('Se contém a classe .hidden', () => {
-      // check the class of the error message
-      const errorDiv = findByTestAttr(wrapper, 'error-message');
-      const errorHasHiddenClass = errorDiv.hasClass('hidden');
-      expect(errorHasHiddenClass).toBe(true);
-
     });
 });
