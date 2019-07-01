@@ -25,7 +25,7 @@ export default class DemoTdd extends React.Component<IDemoTddProps, IDemoTddStat
   public render(): React.ReactElement<IDemoTddProps> {
     return (
       <div className={styles.demoTdd} data-test="component-demo-tdd">
-        {/* <Display data-test="display-contagem" counter={this.state.counter} /> */}
+        <Display counter={this.state.counter} />
         <h1 data-test="display-contagem">Contagem: {this.state.counter}</h1>
         <button
           data-test="button-incremento"
