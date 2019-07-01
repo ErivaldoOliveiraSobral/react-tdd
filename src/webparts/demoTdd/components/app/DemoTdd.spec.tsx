@@ -31,24 +31,23 @@ const findByTestAttr = (wrapper: ShallowWrapper, value: string): ShallowWrapper 
 describe("Test Driven Development", function () {
     const description = "Demo TDD";
     const props: IDemoTddProps = { description }
+    let wrapper: ShallowWrapper = setup(props);
 
     beforeEach(() => {
+        wrapper = setup(props);
     });
 
     it('Renderizado sem erro', () => {
-        const wrapper = setup(props);
         const appComponent = findByTestAttr(wrapper, 'component-demo-tdd')
         expect(appComponent.length).toBe(1);
         // console.log(wrapper.debug());
     });
     it('Renderizando display', () => {
-        const wrapper = setup(props);
         const counterDisplay = findByTestAttr(wrapper, 'display-contagem');
         expect(counterDisplay.text()).toBe("Contagem: 0")
         expect(counterDisplay.length).toBe(1);
     });
     it('Renderizando botão', () => {
-        const wrapper = setup(props);
         const buttonIncrement = findByTestAttr(wrapper, 'button-incremento');
         expect(buttonIncrement.length).toBe(1);
     });
@@ -85,7 +84,7 @@ describe("Test Driven Development", function () {
     });
     it('Renderizanção do Display com os cliques nos botões', () => {
         const counter = 0;
-        const wrapper = setup(null, { counter });
+        const wrapper = setup(props, { counter });
         let display: ShallowWrapper;
         let button: ShallowWrapper;
 

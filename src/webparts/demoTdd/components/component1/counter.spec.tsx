@@ -1,19 +1,17 @@
 import * as React from 'react';
-import { shallow } from "enzyme";
+import "jest";
+import { shallow, ShallowWrapper } from "enzyme";
 import Display from "./counter";
 
-const setup = (props: any = {}) => {
-    return shallow(<Display {...props} />);
-};
-
 describe("Teste display", () => {
-    beforeEach(() => {
+    let wrapper: ShallowWrapper;
+    const props: number = 0; 
 
+    beforeEach(() => {
+        wrapper = shallow(<Display counter={props} />)
     });
     it("Display renderiando?", () => {
-        const props = 0; 
-        const wrapper = setup({ props });
         const display = wrapper.find("[data-test='display-contagem']");
-        expect(display.text()).toBe("Contagem: 0");
+        expect(display.text()).toBe("Contagem: 0"); 
     });
 });
