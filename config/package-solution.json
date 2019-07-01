@@ -1,0 +1,13 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "curso-tdd-client-side-solution",
+    "id": "ac73a2ac-bd37-4d77-9fc2-cf7c35fdb97e",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "isDomainIsolated": false
+  },
+  "paths": {
+    "zippedPackage": "solution/curso-tdd.sppkg"
+  }
+}
