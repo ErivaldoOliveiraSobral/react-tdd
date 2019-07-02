@@ -9,10 +9,19 @@
           "manifest": "./src/webparts/demoTdd/DemoTddWebPart.manifest.json"
         }
       ]
+    },
+    "jotto-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/jotto/JottoWebPart.js",
+          "manifest": "./src/webparts/jotto/JottoWebPart.manifest.json"
+        }
+      ]
     }
   },
   "externals": {},
   "localizedResources": {
-    "DemoTddWebPartStrings": "lib/webparts/demoTdd/loc/{locale}.js"
+    "DemoTddWebPartStrings": "lib/webparts/demoTdd/loc/{locale}.js",
+    "JottoWebPartStrings": "lib/webparts/jotto/loc/{locale}.js"
   }
 }

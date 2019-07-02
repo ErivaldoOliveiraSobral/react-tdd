@@ -4,8 +4,8 @@ import { shallow, ShallowWrapper } from "enzyme";
 import Display from "./counter";
 
 describe("Teste display", () => {
-    let wrapper: ShallowWrapper;
-    const props: number = 0; 
+    let wrapper: ShallowWrapper; 
+    const props: number = 0 ; 
 
     beforeEach(() => {
         wrapper = shallow(<Display counter={props} />)
