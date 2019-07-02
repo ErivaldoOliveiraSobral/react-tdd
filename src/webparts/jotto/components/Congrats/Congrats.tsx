@@ -1,6 +1,11 @@
 import * as React from 'react';
 
-const Congrats = ({ success }): JSX.Element => {
+type Props = {
+    success: boolean;
+}
+
+const Congrats = (props: Props): JSX.Element => {
+    const { success } = props;
     if (success) {
         return (
             <div data-test="component-congrats">
