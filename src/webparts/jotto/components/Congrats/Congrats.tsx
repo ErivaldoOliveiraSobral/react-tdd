@@ -14,7 +14,7 @@ const Congrats = (props: Props): JSX.Element => {
             </div>
         );
     } else {
-        return (
+        return ( 
             <div data-test="component-congrats" />
         );
     }
