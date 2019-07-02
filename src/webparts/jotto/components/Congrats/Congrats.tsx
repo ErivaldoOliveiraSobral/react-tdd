@@ -1,15 +1,16 @@
 import * as React from 'react';
 
-type Props = {
+export type Props = {
     success: boolean;
+    text?: string;
 }
 
 const Congrats = (props: Props): JSX.Element => {
-    const { success } = props;
+    const { success, text } = props;
     if (success) {
         return (
-            <div data-test="component-congrats">
-                <span data-test="congrats-message">Parabéns! Você acertou a palavra!</span>
+            <div data-test="component-congrats2">
+                <span data-test="congrats-message">{text ? text : "Parabéns! Você acertou a palavra!"}</span>
             </div>
         );
     } else {
