@@ -1,7 +1,7 @@
 import * as React from 'react';
 import "jest";
 import { shallow, ShallowWrapper } from "enzyme";
-import { findByTestAttr } from "../../../../test/Utils";
+import findByTestAttr from "../../../../test/Utils";
 
 import Congrats, { Props } from "./Congrats";
 

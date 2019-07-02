@@ -9,7 +9,7 @@ export default class Jotto extends React.Component<IJottoProps, IJottoState> {
   public render(): React.ReactElement<IJottoProps> {
     return (
       <div>
-        <Congrats success={true}/>
+        <Congrats success={true} text="Msg"/>
       </div>
     );
   }
