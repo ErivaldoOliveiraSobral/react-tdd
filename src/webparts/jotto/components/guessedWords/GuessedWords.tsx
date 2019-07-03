@@ -7,7 +7,6 @@ export type GuessedWordsType = {
 };
 
 const GuessedWords = (props: GuessedWordsType[]): JSX.Element => {
-    let palavras = props ? props : [];
     let contents: JSX.Element = (<div />);
     if (props.length === 0) {
         contents = (

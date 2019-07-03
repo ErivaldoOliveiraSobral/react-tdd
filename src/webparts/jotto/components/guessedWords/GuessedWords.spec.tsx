@@ -25,7 +25,11 @@ describe("Compoenente responsável por fazer o match das palavaras", () => {
         component = findByTestAttr(wrapper, 'grid-guessed');
         expect(component.length).toBe(0);
     });
-    it("Instruções das palavras encontradas aparece se há alguma palavra", () => {
+    it("Instruções aparecem quando há alguma palavra nas props", () => {
+        component = findByTestAttr(wrapper, 'guess-instructions');
+        expect(component.text()).toBe("Tente encontrar a palavra secreta!");
+    });
+    it("Instruções não aparecem quando há alguma palavra", () => {
         wrapper = setup([{ guessedWord: 'train', letterMatchCount: 3 }]);
         component = findByTestAttr(wrapper, 'guess-instructions');
         expect(component.length).toBe(0);
