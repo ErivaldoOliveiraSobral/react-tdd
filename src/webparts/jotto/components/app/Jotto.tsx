@@ -11,7 +11,8 @@ export default class Jotto extends React.Component<IJottoProps, IJottoState> {
     return (
       <div>
         {/* <Congrats success={true} text="Msg"/> */}
-        <GuessedWords guessedWord="" />
+        {/* <GuessedWords guessedWord="" /> */}
+        {GuessedWords([{guessedWord: "Teste", letterMatchCount: 1}])}
       </div>
     );
   }
