@@ -23,17 +23,20 @@ const GuessedWords = (props: GuessedWordsType[]): JSX.Element => {
             );
         });
         contents = (
-            <table data-test="grid-guessed">
-                <thead>
-                    <tr>
-                        <th>Palavra</th>
-                        <th>Acertos</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    { listItems }
-                </tbody>
-            </table>
+            <div>
+                <h3>Palavras encontradas</h3>
+                <table data-test="grid-guessed">
+                    <thead>
+                        <tr>
+                            <th>Palavra</th>
+                            <th>Acertos</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {listItems}
+                    </tbody>
+                </table>
+            </div>
         );
     }
     return (

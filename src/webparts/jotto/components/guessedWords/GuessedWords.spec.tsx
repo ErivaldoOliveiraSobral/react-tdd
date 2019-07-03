@@ -11,7 +11,6 @@ const setup = (props: GuessedWordsType[] = []): ShallowWrapper => {
 
 describe("Compoenente responsável por fazer o match das palavaras", () => {
     let wrapper: ShallowWrapper;
-    let guessed: GuessedWordsType[];
     let component: ShallowWrapper;
 
     beforeEach(() => {
@@ -35,22 +34,22 @@ describe("Compoenente responsável por fazer o match das palavaras", () => {
 
 describe("Match das palavras", () => {
     let wrapper: ShallowWrapper;
-    let guessedWords: GuessedWordsType[];
     let component: ShallowWrapper;
-
-    guessedWords = [
+    let guessedWords: GuessedWordsType[] = [
         { guessedWord: 'train', letterMatchCount: 3 },
         { guessedWord: 'agile', letterMatchCount: 1 },
         { guessedWord: 'party', letterMatchCount: 5 }
     ];
-    it("Grid renderizando", () => {
+    beforeEach(() => {
         wrapper = setup(guessedWords);
+    });
+    it("Grid renderizando", () => {
         component = findByTestAttr(wrapper, 'grid-guessed');
         expect(component.length).not.toBe(0);
     });
     it("Grid renderizando 3 itens", () => {
-        wrapper = setup(guessedWords);
         component = findByTestAttr(wrapper, 'list-items');
         expect(component.length).toBe(3);
     });
+
 });
