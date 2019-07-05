@@ -9,7 +9,7 @@ import {
 
 import * as strings from 'JottoWebPartStrings';
 import Jotto from './components/app/Jotto';
-import { IJottoProps } from './components/app/IJottoProps';
+import { IJottoProps } from './components/app/Jotto';
 
 export interface IJottoWebPartProps {
   description: string;

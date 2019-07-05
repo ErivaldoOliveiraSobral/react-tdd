@@ -1,21 +1,27 @@
 import * as React from 'react';
 
 export interface IInputProps { 
-  teste: string;
   guessedWord?: any;
 }
 
 export interface IInputState {
   success: boolean;
+  word?: string
 }
 
 export default class Input extends React.Component<IInputProps, IInputState> {
   constructor(props: IInputProps) {
     super(props);
     this.state = {
-      success: false
+      success: false,
+      word: ''
     };
   }
+
+  setGuessedWord(evt) {
+    evt.preventDefault();
+    // this.setState({ word: "evt.taget.value" });
+  };
 
   public render(): React.ReactElement<IInputProps> {
     const content = this.state.success
@@ -23,7 +29,12 @@ export default class Input extends React.Component<IInputProps, IInputState> {
       : (
         <form>
           <input type="text" data-test="input-box" />
-          <button type="submit" data-test="submit-button">Submit</button>
+          <button 
+            type="submit" 
+            data-test="submit-button"
+            onClick={this.setGuessedWord}>
+            Submit
+          </button>
         </form>
       )
     return (

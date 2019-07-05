@@ -79,9 +79,9 @@ describe("Resderização", () => {
     });
 });
 describe("Update State", () => {
-    // it("`guessedWord` é uma propriedade de função", () => {
-    //     const wrapper = setup();
-    //     const guessedWordProp = wrapper.instance().props.guessedWord;
-    //     expect(guessedWordProp).toBeInstanceOf(Function);
-    // });
+    it("`guessedWord` é uma propriedade de função", () => {
+        const wrapper = setup();
+        const button = findByTestAttr(wrapper, 'submit-button');
+        button.simulate('click', { preventDefault() {} });
+    });
 });

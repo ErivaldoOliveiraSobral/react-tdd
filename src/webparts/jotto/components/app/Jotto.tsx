@@ -1,11 +1,14 @@
 import * as React from 'react';
-import { IJottoProps } from './IJottoProps';
 
 import Congrats from "../congrats/Congrats";
 import GuessedWords from "../guessedWords/GuessedWords";
+import Input from "../input/Input";
 
 interface IJottoState { 
   secretWord: string;
+};
+export interface IJottoProps {
+  description: string;
 };
 
 export default class Jotto extends React.Component<IJottoProps, IJottoState> {
@@ -26,7 +29,7 @@ export default class Jotto extends React.Component<IJottoProps, IJottoState> {
     return (
       <div>
         <Congrats success={false} />
-        {/* <GuessedWords /> */}
+        <Input />
         {GuessedWords([])}
       </div>
     );
