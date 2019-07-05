@@ -3,14 +3,19 @@ import "jest";
 import { shallow, ShallowWrapper } from "enzyme";
 import { findByTestAttr } from "../../../../test/Utils";
 
-import Input, { IInputState } from "./Input";
+import Input, { IInputState, IInputProps } from "./Input";
+
+
+const initialProps: IInputProps = {
+    teste: "TesteTeste"
+};
 
 const initialState: IInputState = {
     success: false
 };
 
-const setup = (state: IInputState = initialState) => {
-    let wrapper: ShallowWrapper = shallow(<Input />);
+const setup = (state: IInputState = initialState, props: IInputProps = initialProps) => {
+    let wrapper: ShallowWrapper = shallow(<Input {...props} />);
     wrapper.setState({ ...state });
     return wrapper;
 };
@@ -60,7 +65,23 @@ describe("Resderização", () => {
             expect(submitButton.length).toBe(0);
         });
     });
+    describe("Teste de propriedade e estado", () => {
+        let estado: IInputState = { success: true };
+        let propriedade: IInputProps = { teste: "Teste" };
+        it("Teste se estado é verdadeiro", () => {
+            const wrapper = setup(estado, propriedade);
+            expect(wrapper.state('success')).toBe(true);
+        });
+        it("Teste de propriedade é igual a Teste", () => {
+            const wrapper = setup(estado, propriedade);
+            expect(wrapper.instance().props).toEqual({ teste: "Teste" });
+        });
+    });
 });
 describe("Update State", () => {
-
+    // it("`guessedWord` é uma propriedade de função", () => {
+    //     const wrapper = setup();
+    //     const guessedWordProp = wrapper.instance().props.guessedWord;
+    //     expect(guessedWordProp).toBeInstanceOf(Function);
+    // });
 });

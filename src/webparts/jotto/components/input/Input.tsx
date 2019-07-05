@@ -1,6 +1,9 @@
 import * as React from 'react';
 
-export interface IInputProps { }
+export interface IInputProps { 
+  teste: string;
+  guessedWord?: any;
+}
 
 export interface IInputState {
   success: boolean;
@@ -20,7 +23,7 @@ export default class Input extends React.Component<IInputProps, IInputState> {
       : (
         <form>
           <input type="text" data-test="input-box" />
-          <button type="submit" data-test="submit-button">Submir</button>
+          <button type="submit" data-test="submit-button">Submit</button>
         </form>
       )
     return (
